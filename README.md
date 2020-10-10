@@ -1,2 +1,2 @@
 # Pokeone
-Common tool kits in Pokeone game
+Common tool kits for Pokeone game
