@@ -1,19 +1,16 @@
 import LoadData
-#*****************Input Unsorted Word*****************#
 
-def is_equal_chars(str1, str2):
+def Is_Equal_Str(str1, str2):
     str1 = str1.lower() # Unsorted Pokemon's name
     str2 = str2.lower() # Sorted name in dic
-    cnt = {}
-    for c in str1:
-        cnt[c] = cnt.get(c, 0) + 1
-    for c in str2:
-        if c not in cnt:
-            return 'Error!'
-        cnt[c] -= 1
-        if cnt[c] < 0:
-            return 'Error!'
-    return str2
+    list1 = list(str1)
+    list2 = list(str2)
+    list1.sort()
+    list2.sort()
+    if list1 == list2:
+        return str2
+    else:
+        return 0    # Not included in dic OR Spelling error
 
 def Sort_Word(str1): 
     length = len(str1)
@@ -33,13 +30,17 @@ def Sort_Word(str1):
         dic = LoadData.dic9P
     
     for str2 in dic:
-        result = is_equal_chars(str1, str2)
-        if result != 'Error!':
+        # result = is_equal_chars(str1, str2)
+        result = Is_Equal_Str(str1, str2)
+        if result != 0:
             break
     return result 
  
 print('Input the Unsorted Pokemon\'s Name: ')
 Unsorted_Word = input()
 Sorted_Word = Sort_Word(Unsorted_Word)
-print(Sorted_Word)
+if Sorted_Word == 0:
+    print('Not included in the dic or exist spelling mistakes!')
+else:
+    print(Sorted_Word)
 
