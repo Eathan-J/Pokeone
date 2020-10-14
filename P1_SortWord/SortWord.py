@@ -10,7 +10,7 @@ def Is_Equal_Str(str1, str2):
     if list1 == list2:
         return str2
     else:
-        return 0    # Not included in dic OR Spelling error
+        return '0'    # Not included in dic OR Spelling error
 
 def Sort_Word(str1): 
     length = len(str1)
@@ -32,14 +32,14 @@ def Sort_Word(str1):
     for str2 in dic:
         # result = is_equal_chars(str1, str2)
         result = Is_Equal_Str(str1, str2)
-        if result != 0:
+        if result != '0':
             break
     return result 
  
 print('Input the Unsorted Pokemon\'s Name: ')
 Unsorted_Word = input()
 Sorted_Word = Sort_Word(Unsorted_Word)
-if Sorted_Word == 0:
+if Sorted_Word == '0':
     print('Not included in the dic or exist spelling mistakes!')
 else:
     print(Sorted_Word)
