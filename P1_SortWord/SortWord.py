@@ -35,12 +35,11 @@ def Sort_Word(str1):
         if result != '0':
             break
     return result 
- 
-print('Input the Unsorted Pokemon\'s Name: ')
-Unsorted_Word = input()
+
+Unsorted_Word = input('Input the Unsorted Pokemon\'s Name: ')
 Sorted_Word = Sort_Word(Unsorted_Word)
 if Sorted_Word == '0':
     print('Not included in the dic or exist spelling mistakes!')
 else:
-    print(Sorted_Word)
+    print('*********************************\nSorted Name:', Sorted_Word.title())
 
